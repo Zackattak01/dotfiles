@@ -84,7 +84,8 @@ local scrlocker    = "slock"
 
 awful.util.terminal = terminal
 -- awful.util.tagnames = { "1", "2", "3", "4", "5" }
-awful.util.tagnames = { "", "", "", "", "", "", ""}
+-- awful.util.tagnames = { "", "", "", "", "", "", ""}
+awful.util.tagnames = { "",  "", "", "", "", "", ""}
 awful.layout.layouts = {
     awful.layout.suit.tile,
 }
@@ -195,7 +196,7 @@ screen.connect_signal("arrange", function (s)
     end
 end)
 -- Create a wibox for each screen and add it
-awful.screen.connect_for_each_screen(function(s) beautiful.at_screen_connect(s) end)
+awful.screen.connect_for_each_screen(function(s) if s ~= nil then beautiful.at_screen_connect(s)end end)
 -- }}}
 
 -- {{{ Key bindings
@@ -682,6 +683,9 @@ awful.rules.rules = {
 	
     { rule = { class = "obsidian"},
     	properties = { focus = false, urgent = false, screen = 1, tag = awful.util.tagnames[3] } },
+
+    { rule = { instance = "Godot_Engine"},
+    	properties = {  floating = true } },
 }
 -- }}}
 

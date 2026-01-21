@@ -1,6 +1,5 @@
 #disable 'fish is an interactive shell blah blah blah ....'
 set fish_greeting
-eval (ssh-agent -c) >/dev/null 2>&1
 
 fish_vi_key_bindings
 
@@ -10,6 +9,7 @@ if status is-login
     #set PATH "/home/zack/.cargo/bin/:/home/zack/.local/bin:/home/zack/dotnet:/home/zack/.dotnet/tools:$PATH"
     #set PATH $PATH:$GOPATH/bin
 	#set-env-vars 
+    eval (ssh-agent -c) >/dev/null 2>&1
     exec startx -- -keeptty
     #exec Hyprland
     end

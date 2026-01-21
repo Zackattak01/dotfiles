@@ -40,6 +40,7 @@ if [[ $graphics == "nvidia" ]]; then
 	xrandr --setprovideroutputsource modesetting NVIDIA-0
 	xrandr --auto
 	~/.screenlayout/layout-nvidia.sh
+	#~/.screenlayout/layout-home.sh
 elif [[ $graphics == "integrated" ]]; then
 	~/.screenlayout/layout-integrated.sh
     IS_DESKTOP=false

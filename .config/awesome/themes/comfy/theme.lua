@@ -12,7 +12,7 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local dpi = xresources.apply_dpi
 
-local icon_font = "Font Awesome 6 Free Solid"
+local icon_font = "Font Awesome 7 Free Solid"
 local widget_icon_font = icon_font .. " 10"
 
 math.randomseed(os.time())

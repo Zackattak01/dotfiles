@@ -15,6 +15,7 @@ end
 set --local tmuxStr (string split ' ' (eval echo -n $tmuxCommands))
 
 if set -q TMUX
+    # bug: if flag name or session name start with '-' they will be interpreted as options
     if not string match -rq "^$_flag_name\$" (tmux ls -F "#{session_name}")
         tmux new-session -d -s $_flag_name -c $_flag_path $cmd 
     end
